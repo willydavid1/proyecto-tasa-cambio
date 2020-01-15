@@ -9,6 +9,7 @@ function app(props) {
   return (
     <BrowserRouter>
           <Menu />
+          <Route exact path="/proyecto-tasa-cambio/" component={Base} />
           <Route exact path="/" component={Base} />
           <Route exact path="/como-lo-hacemos" component={Explicacion} />
     </BrowserRouter>

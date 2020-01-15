@@ -12,7 +12,7 @@ export default function Explicacion(props) {
       </p>
       <p>Las tasas e indicadores son solo de uso referencial...</p>
 
-      <Link to="/">Aquí puedes ver algunos indicadores (parte de abajo)</Link>
+      <Link to="/proyecto-tasa-cambio/">Aquí puedes ver algunos indicadores (parte de abajo)</Link>
     </div>
   );
 }

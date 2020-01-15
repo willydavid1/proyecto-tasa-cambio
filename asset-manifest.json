@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/proyecto-tasa-cambio/static/css/main.ca57514d.chunk.css",
-    "main.js": "/proyecto-tasa-cambio/static/js/main.890d1a51.chunk.js",
-    "main.js.map": "/proyecto-tasa-cambio/static/js/main.890d1a51.chunk.js.map",
+    "main.js": "/proyecto-tasa-cambio/static/js/main.4bab546b.chunk.js",
+    "main.js.map": "/proyecto-tasa-cambio/static/js/main.4bab546b.chunk.js.map",
     "runtime-main.js": "/proyecto-tasa-cambio/static/js/runtime-main.024ed845.js",
     "runtime-main.js.map": "/proyecto-tasa-cambio/static/js/runtime-main.024ed845.js.map",
     "static/css/2.67123b20.chunk.css": "/proyecto-tasa-cambio/static/css/2.67123b20.chunk.css",
     "static/js/2.1d395e8b.chunk.js": "/proyecto-tasa-cambio/static/js/2.1d395e8b.chunk.js",
     "static/js/2.1d395e8b.chunk.js.map": "/proyecto-tasa-cambio/static/js/2.1d395e8b.chunk.js.map",
     "index.html": "/proyecto-tasa-cambio/index.html",
-    "precache-manifest.4c9e14d2ff787bc75e366627901ba505.js": "/proyecto-tasa-cambio/precache-manifest.4c9e14d2ff787bc75e366627901ba505.js",
+    "precache-manifest.57ff9bbd99c410495704872d3825dca1.js": "/proyecto-tasa-cambio/precache-manifest.57ff9bbd99c410495704872d3825dca1.js",
     "service-worker.js": "/proyecto-tasa-cambio/service-worker.js",
     "static/css/2.67123b20.chunk.css.map": "/proyecto-tasa-cambio/static/css/2.67123b20.chunk.css.map",
     "static/css/main.ca57514d.chunk.css.map": "/proyecto-tasa-cambio/static/css/main.ca57514d.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.67123b20.chunk.css",
     "static/js/2.1d395e8b.chunk.js",
     "static/css/main.ca57514d.chunk.css",
-    "static/js/main.890d1a51.chunk.js"
+    "static/js/main.4bab546b.chunk.js"
   ]
 }

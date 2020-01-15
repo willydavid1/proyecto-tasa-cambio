@@ -1,0 +1,65 @@
+.base__contenido {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+  background: yellow;
+
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.color {
+  background: #1488cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+}
+
+.base__contenido p {
+  margin-bottom: 2px;
+}
+
+.menu {
+    height: 70px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    border: 1px solid white;
+    padding: 5px 20px;
+    background: transparent;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: white;
+    text-decoration: none;
+    color: #2b32b2;
+    transition: .5s;
+} 
+
+.separador {
+  width: 80%;
+  height: 10px;
+  background: white;
+  margin: 15px 0;
+}
+.tabla {
+  margin-top: 100px;
+}

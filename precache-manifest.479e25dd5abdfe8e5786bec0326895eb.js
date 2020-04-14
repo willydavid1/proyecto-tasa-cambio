@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c6d1a5fb020f0976aacf666c78f2f1b",
+    "revision": "4af77ef3b364676a37d4136f25a449b9",
     "url": "/proyecto-tasa-cambio/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/proyecto-tasa-cambio/static/css/2.67123b20.chunk.css"
   },
   {
-    "revision": "66d4866131832e441473",
-    "url": "/proyecto-tasa-cambio/static/css/main.6039b459.chunk.css"
+    "revision": "a0d002cb30d0a0f6b248",
+    "url": "/proyecto-tasa-cambio/static/css/main.8f1454a1.chunk.css"
   },
   {
     "revision": "00f2c0915bda36e2ac97",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/proyecto-tasa-cambio/static/js/2.153ec9cb.chunk.js.LICENSE"
   },
   {
-    "revision": "66d4866131832e441473",
-    "url": "/proyecto-tasa-cambio/static/js/main.ce9d9ff5.chunk.js"
+    "revision": "a0d002cb30d0a0f6b248",
+    "url": "/proyecto-tasa-cambio/static/js/main.85764bd4.chunk.js"
   },
   {
     "revision": "d74d5a5c4d92e6fb11f7",

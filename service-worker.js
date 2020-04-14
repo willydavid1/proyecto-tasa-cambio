@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/proyecto-tasa-cambio/precache-manifest.f5203709c5e4a5179958ed36208430e5.js"
+  "/proyecto-tasa-cambio/precache-manifest.479e25dd5abdfe8e5786bec0326895eb.js"
 );
 
 self.addEventListener('message', (event) => {

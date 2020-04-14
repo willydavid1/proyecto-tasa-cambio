@@ -3,9 +3,10 @@ import React from "react";
 export default function Indicadores(props) {
   return (
     <div className="mb-5">
-      
       <div className="table-responsive container tabla">
-  <h5 className="text-center">Indicadores Hoy {props.indicadores._timestamp.fecha_corta} 💹〽</h5>
+        <h5 className="text-center">
+          Indicadores Hoy {props.indicadores._timestamp.fecha_corta} 💹〽
+        </h5>
         <table className="table table-bordered mb-0">
           <thead>
             <tr>

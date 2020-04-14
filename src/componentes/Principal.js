@@ -4,6 +4,7 @@ import Loader from "./Loader"; //importo el loader
 
 // import { Link } from "react-router-dom"
 import "./estilos/base.css";
+import TasaDeCambioModificada from "./TasaDeCambioModificada";
 
 function useIndicadores() {
   const [valor, setValor] = useState(""); //tipo de cambio
@@ -11,6 +12,8 @@ function useIndicadores() {
   const [indicadores, setIndicadores] = useState(false); //indicadores
   const [errorPeticion, setErrorPeticion] = useState(false); //errores en el estado
   const [cargandoPeticion, setcargandoPeticion] = useState(false); //carando la peticion
+  const [tasaPersonalizada, setTasaPersonalizada] = useState(""); //es el valor de la tasa que se reemplaza por la real
+
   async function obtenesIndicadores() {
     setcargandoPeticion(true);
     try {
@@ -40,12 +43,14 @@ function useIndicadores() {
     setMoneda,
     indicadores,
     errorPeticion,
-    cargandoPeticion
+    cargandoPeticion,
+    tasaPersonalizada,
+    setTasaPersonalizada,
   };
 }
 
 // creamos el componente plantilla base funcional que recibe por parametro los props los recibimos y los leemos con props.VALOR
-function Base(props) {
+function Principal(props) {
   const {
     valor,
     setValor,
@@ -53,7 +58,9 @@ function Base(props) {
     setMoneda,
     indicadores,
     errorPeticion,
-    cargandoPeticion
+    cargandoPeticion,
+    tasaPersonalizada,
+    setTasaPersonalizada,
   } = useIndicadores();
 
   function manejoCambio(event) {
@@ -77,6 +84,7 @@ function Base(props) {
     }
   }
 
+  // input para cambiar la cantidad de dinero en el estado
   function input(valor) {
     return (
       <div className="input-group mb-3">
@@ -87,11 +95,21 @@ function Base(props) {
           type="text"
           className="form-control"
           value={moneda}
-          onChange={e => {
-            setMoneda(e.target.value);
-          }}
+          onChange={(e) => setMoneda(e.target.value)}
         />
       </div>
+    );
+  }
+
+  function inputModificadorTasaCambio(tasaActual) {
+    return (
+      <input
+        type="Number"
+        className="inputModificadorTasaCambio"
+        placeholder={tasaActual}
+        value={tasaPersonalizada}
+        onChange={(e) => setTasaPersonalizada(e.target.value)}
+      />
     );
   }
 
@@ -114,52 +132,126 @@ function Base(props) {
 
     if (valor === "pesosadolar") {
       return (
-        <p>
-          Tus {moneda_formateada} pesos son{" "}
-          {(moneda / indicadores.USDCOL.ratecash).toFixed(2)} dolares 💲💵 el
-          cambio promedio en efectivo esta en {indicadores.USDCOL.ratecash}{" "}
-          pesos colombianos
-        </p>
+        <React.Fragment>
+          <p>
+            Tus {moneda_formateada} pesos son{" "}
+            {(moneda / indicadores.USDCOL.ratecash).toFixed(2)} dolares 💲💵 el
+            cambio promedio en efectivo esta en{" "}
+            {inputModificadorTasaCambio(indicadores.USDCOL.ratecash)} pesos
+            colombianos
+          </p>
+
+          {/* si modifica la tasa renderiza el componente */}
+          {tasaPersonalizada ? (
+            <TasaDeCambioModificada
+              moneda_formateada={moneda_formateada}
+              moneda={moneda}
+              tasaPersonalizada={tasaPersonalizada}
+              valor={valor}
+            />
+          ) : (
+            ""
+          )}
+        </React.Fragment>
       );
     } else if (valor === "pesosabs") {
       return (
-        <p>
-          Tus {moneda_formateada} pesos son{" "}
-          {new Intl.NumberFormat().format(
-            (moneda / indicadores.COL.efectivo).toFixed(0)
-          )} bolivares ✅ la tasa
-          de cambio esta en {indicadores.COL.efectivo}
-        </p>
+        <React.Fragment>
+          <p>
+            Tus {moneda_formateada} pesos son{" "}
+            {new Intl.NumberFormat().format(
+              (moneda / indicadores.COL.efectivo).toFixed(0)
+            )}{" "}
+            bolivares ✅ la tasa de cambio esta en{" "}
+            {inputModificadorTasaCambio(indicadores.COL.efectivo)}
+          </p>
+
+          {/* si modifica la tasa renderiza el componente */}
+          {tasaPersonalizada ? (
+            <TasaDeCambioModificada
+              moneda_formateada={moneda_formateada}
+              moneda={moneda}
+              tasaPersonalizada={tasaPersonalizada}
+              valor={valor}
+            />
+          ) : (
+            ""
+          )}
+        </React.Fragment>
       );
     } else if (valor === "bsadolar") {
       return (
-        <p>
-          Tus {moneda_formateada} bolivares son{" "}
-          {(moneda / indicadores.USD.transferencia).toFixed(2)} dolares 💰💲 el
-          dolar en venezuela esta en {indicadores.USD.transferencia}
-        </p>
+        <React.Fragment>
+          <p>
+            Tus {moneda_formateada} bolivares son{" "}
+            {(moneda / indicadores.USD.transferencia).toFixed(2)} dolares 💰💲
+            el dolar en venezuela esta en{" "}
+            {inputModificadorTasaCambio(indicadores.USD.transferencia)}
+          </p>
+
+          {/* si modifica la tasa renderiza el componente */}
+          {tasaPersonalizada ? (
+            <TasaDeCambioModificada
+              moneda_formateada={moneda_formateada}
+              moneda={moneda}
+              tasaPersonalizada={tasaPersonalizada}
+              valor={valor}
+            />
+          ) : (
+            ""
+          )}
+        </React.Fragment>
       );
     } else if (valor === "bsapesos") {
       return (
-        <p>
-          Tus {moneda_formateada} bolivares son{" "}
-          {new Intl.NumberFormat().format(
-            (moneda * indicadores.COL.efectivo).toFixed(0)
-          )} pesos ✅ la
-          tasa de bolivares a pesos oscila en un aproximado de{" "}
-          {indicadores.COL.efectivo}
-        </p>
+        <React.Fragment>
+          <p>
+            Tus {moneda_formateada} bolivares son{" "}
+            {new Intl.NumberFormat().format(
+              (moneda * indicadores.COL.efectivo).toFixed(0)
+            )}{" "}
+            pesos ✅ la tasa de bolivares a pesos oscila en un aproximado de{" "}
+            {inputModificadorTasaCambio(indicadores.COL.efectivo)}
+          </p>
+
+          {/* si modifica la tasa renderiza el componente */}
+          {tasaPersonalizada ? (
+            <TasaDeCambioModificada
+              moneda_formateada={moneda_formateada}
+              moneda={moneda}
+              tasaPersonalizada={tasaPersonalizada}
+              valor={valor}
+            />
+          ) : (
+            ""
+          )}
+        </React.Fragment>
       );
     } else if (valor === "dolaresapesos") {
       return (
-        <p>
-          Tus {moneda_formateada} dolares son{" "}
-          {new Intl.NumberFormat().format(
-            (moneda * indicadores.USDCOL.ratecash).toFixed(2)
-          )}{" "}
-          pesos colombianos✅ la tasa de dolares a pesos oscila en un aproximado
-          de {indicadores.USDCOL.ratecash}
-        </p>
+        <React.Fragment>
+          <p>
+            Tus {moneda_formateada} dolares son{" "}
+            {new Intl.NumberFormat().format(
+              (moneda * indicadores.USDCOL.ratecash).toFixed(2)
+            )}{" "}
+            pesos colombianos✅ la tasa de dolares a pesos oscila en un
+            aproximado de{" "}
+            {inputModificadorTasaCambio(indicadores.USDCOL.ratecash)}
+          </p>
+
+          {/* si modifica la tasa renderiza el componente */}
+          {tasaPersonalizada ? (
+            <TasaDeCambioModificada
+              moneda_formateada={moneda_formateada}
+              moneda={moneda}
+              tasaPersonalizada={tasaPersonalizada}
+              valor={valor}
+            />
+          ) : (
+            ""
+          )}
+        </React.Fragment>
       );
     }
   }
@@ -188,7 +280,8 @@ function Base(props) {
         <div className="separador"></div>
         <p>
           Aquí sabrás tu tasa de conversión y saber cuánto vale tu dinero en
-          otros países, puedes sacar cuentas como:
+          otros países (Con una tasa real o tu propia tasa de cambio), puedes
+          sacar cuentas como:
         </p>
         <p>- Pesos colombianos a Dólares? (¿cuántos dólares son mis pesos?)</p>
         <p>
@@ -227,7 +320,7 @@ function Base(props) {
 
         {/* input para colocar, los numeros si ya definio el tipo de cambio*/}
         {valor && retornaValor(valor)}
-        {valor ? input(valor) : "No has seleccionado nada"}
+        {valor ? input(valor) : "No has seleccionado el tipo de cambio."}
 
         {/* si ya coloco la cantidad de dinero, llama a sacarCuenta */}
         {moneda && sacarCuenta()}
@@ -238,4 +331,4 @@ function Base(props) {
   );
 }
 
-export default Base;
+export default Principal;

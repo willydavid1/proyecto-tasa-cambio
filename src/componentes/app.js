@@ -1,5 +1,5 @@
 import React from "react";
-import Base from "./base.js"
+import Principal from "./Principal.js"
 import Menu from "./menu"
 import Explicacion from "./explicacion"
 
@@ -9,8 +9,8 @@ function app(props) {
   return (
     <BrowserRouter>
           <Menu />
-          <Route exact path="/proyecto-tasa-cambio/" component={Base} />
-          <Route exact path="/" component={Base} />
+          <Route exact path="/proyecto-tasa-cambio/" component={Principal} />
+          <Route exact path="/" component={Principal} />
           <Route exact path="/como-lo-hacemos" component={Explicacion} />
     </BrowserRouter>
   );

@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/proyecto-tasa-cambio/static/css/main.8f1454a1.chunk.css",
-    "main.js": "/proyecto-tasa-cambio/static/js/main.85764bd4.chunk.js",
-    "main.js.map": "/proyecto-tasa-cambio/static/js/main.85764bd4.chunk.js.map",
-    "runtime-main.js": "/proyecto-tasa-cambio/static/js/runtime-main.024ed845.js",
-    "runtime-main.js.map": "/proyecto-tasa-cambio/static/js/runtime-main.024ed845.js.map",
+    "main.css": "/proyecto-tasa-cambio/static/css/main.da2a84be.chunk.css",
+    "main.js": "/proyecto-tasa-cambio/static/js/main.ffe0f5c4.chunk.js",
+    "main.js.map": "/proyecto-tasa-cambio/static/js/main.ffe0f5c4.chunk.js.map",
+    "runtime-main.js": "/proyecto-tasa-cambio/static/js/runtime-main.a08be4cf.js",
+    "runtime-main.js.map": "/proyecto-tasa-cambio/static/js/runtime-main.a08be4cf.js.map",
     "static/css/2.67123b20.chunk.css": "/proyecto-tasa-cambio/static/css/2.67123b20.chunk.css",
-    "static/js/2.153ec9cb.chunk.js": "/proyecto-tasa-cambio/static/js/2.153ec9cb.chunk.js",
-    "static/js/2.153ec9cb.chunk.js.map": "/proyecto-tasa-cambio/static/js/2.153ec9cb.chunk.js.map",
+    "static/js/2.fde7d273.chunk.js": "/proyecto-tasa-cambio/static/js/2.fde7d273.chunk.js",
+    "static/js/2.fde7d273.chunk.js.map": "/proyecto-tasa-cambio/static/js/2.fde7d273.chunk.js.map",
     "index.html": "/proyecto-tasa-cambio/index.html",
-    "precache-manifest.479e25dd5abdfe8e5786bec0326895eb.js": "/proyecto-tasa-cambio/precache-manifest.479e25dd5abdfe8e5786bec0326895eb.js",
+    "precache-manifest.50c21973dc77b97f2fc3f1682e4a2306.js": "/proyecto-tasa-cambio/precache-manifest.50c21973dc77b97f2fc3f1682e4a2306.js",
     "service-worker.js": "/proyecto-tasa-cambio/service-worker.js",
     "static/css/2.67123b20.chunk.css.map": "/proyecto-tasa-cambio/static/css/2.67123b20.chunk.css.map",
-    "static/css/main.8f1454a1.chunk.css.map": "/proyecto-tasa-cambio/static/css/main.8f1454a1.chunk.css.map",
-    "static/js/2.153ec9cb.chunk.js.LICENSE": "/proyecto-tasa-cambio/static/js/2.153ec9cb.chunk.js.LICENSE"
+    "static/css/main.da2a84be.chunk.css.map": "/proyecto-tasa-cambio/static/css/main.da2a84be.chunk.css.map",
+    "static/js/2.fde7d273.chunk.js.LICENSE": "/proyecto-tasa-cambio/static/js/2.fde7d273.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.024ed845.js",
+    "static/js/runtime-main.a08be4cf.js",
     "static/css/2.67123b20.chunk.css",
-    "static/js/2.153ec9cb.chunk.js",
-    "static/css/main.8f1454a1.chunk.css",
-    "static/js/main.85764bd4.chunk.js"
+    "static/js/2.fde7d273.chunk.js",
+    "static/css/main.da2a84be.chunk.css",
+    "static/js/main.ffe0f5c4.chunk.js"
   ]
 }
